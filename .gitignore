@@ -5,4 +5,8 @@ CMakeFiles/*
 CMakeCache.txt
 */*.cmake
 */Makefile
+out/
+.vs/
+.vscode/
+*/out/
 
