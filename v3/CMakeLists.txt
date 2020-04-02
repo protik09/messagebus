@@ -4,7 +4,7 @@
 cmake_minimum_required (VERSION 3.5)
 set (CMAKE_CXX_STANDARD 14)
 
-project("v1")
+project("v3")
 
 # Add source to this project's executable.
 file(GLOB target_sources
@@ -13,4 +13,4 @@ file(GLOB target_sources
 )
 
 # Add the executable 
-add_executable(v1_exec ${target_sources})
+add_executable(v3_exec ${target_sources})
