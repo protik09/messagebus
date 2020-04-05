@@ -59,5 +59,9 @@ int main()
 	bus->handleMessages();
 
 	// clean up memory
-	// ...
+	while (!garbage.empty())
+	{
+		garbage.pop_back();
+	}
+	
 }
