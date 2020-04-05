@@ -9,6 +9,6 @@ out/
 .vs/
 .vscode/
 */out/
-
+build/
 
 v1/v1_exec
