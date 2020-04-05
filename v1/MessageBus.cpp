@@ -1,3 +1,11 @@
+//==============================================================
+// Filename : MessageBus.cpp
+// Authors : Dharanish NH, Protik Banerji
+// Version : 1.0
+// License : MIT
+// Description : Messagebus class member function defintions
+//==============================================================
+
 #include <map> // Include map library to store data in a mapped data type (subscriptions)
 
 #include "MessageBus.h" // Include user defined function
@@ -35,27 +43,27 @@ void MessageBus::acceptMessage(TextMessage *message)
 void MessageBus::printMessages()
 {
 	while (!queue.empty()) // Checks if queue is not empty
-	{											 
+	{
 		TextMessage tm = *(queue.top());		 // assigns the pointer data to a variable
 		std::cout << tm.toString() << std::endl; // converts and prints in string format
 		queue.pop();							 // removes the message after displaying
 	}
 }
 
-// Member function to handle 
+// Member function to handle
 void MessageBus::handleMessages()
 {
 	// Process priority queue till empty
 	while (queue.size() != 0)
-	{										
+	{
 		TextMessage *message = queue.top(); // Message pointer holds the info of topmost data on queue
 
 		std::vector<Node *> elements = subscriptions[message->getTopic()]; //Read all node elements into a vector structure
 
 		// For all elements in a particular topic
 		for (Node *node : elements)
-		{ 	
-			node->acceptMessage(message); // Add the messages to the priority queue
+		{
+			node->acceptMessage(message); // Print the message located on the node element
 		}
 		queue.pop(); //removes the data from queue
 	}

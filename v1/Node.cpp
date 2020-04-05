@@ -1,21 +1,37 @@
-#include <iostream>												  //standard C++ library for input and output
+//==============================================================
+// Filename : Node.cpp
+// Authors : Dharanish NH, Protik Banerji
+// Version : 1.0
+// License : MIT
+// Description : Node class member function defintions
+//==============================================================
 
-#include "Node.h"												  //include standard user defined library
-#include "TextMessage.h"										  //include standard user defined library			
-#include "MessageBus.h"											  //include standard user defined library
+#include <iostream> // standard C++ library for input and output
 
-std::string Node::getName() const {								 //getName function definition returns name 
+#include "Node.h"		 // include standard user defined library
+#include "TextMessage.h" // include standard user defined library
+#include "MessageBus.h"	 // include standard user defined library
+
+// Get the name of the node
+std::string Node::getName() const
+{
 	return name;
 }
 
-void Node::sendMessage(TextMessage* message)  {                 //sendMessage function definition points to messagebus acceptmessage function
+// Add message to bus queue
+void Node::sendMessage(TextMessage *message)
+{
 	bus->acceptMessage(message);
 }
 
-void Node::acceptMessage(TextMessage* message) {               //acceptMessage funcction definition  to print message information
+// Print the message when accepting it
+void Node::acceptMessage(TextMessage *message)
+{
 	std::cout << message->toString() << std::endl;
 }
 
-bool operator<(const Node& lhs, const Node& rhs) {             //operator function definition 
+// Overloading the < operator to compare Left Hand and Right Hand notes
+bool operator<(const Node &lhs, const Node &rhs)
+{
 	return lhs.name < rhs.name;
 }
