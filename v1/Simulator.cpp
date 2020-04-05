@@ -55,12 +55,14 @@ int main()
 		garbage.push_back(message2);
 		garbage.push_back(message3);
 		garbage.push_back(messageGen);
+
 	}
 	bus->handleMessages();
 
 	// clean up memory
 	while (!garbage.empty())
 	{
+		delete garbage.back();
 		garbage.pop_back();
 	}
 	
