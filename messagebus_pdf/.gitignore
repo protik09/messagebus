@@ -1,0 +1,5 @@
+# Include only the following files
+*
+!.gitignore
+!messagebus.tex
+!maketex.cmd
