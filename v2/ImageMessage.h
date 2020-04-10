@@ -7,10 +7,10 @@ class ImageMessage : public Message {
 private:
 	std::string base64encoded;
 public:
-	ImageMessage(int priority, const std::string& from, const std::string& topic, unsigned char* data, int length) : ... {
+	ImageMessage(int priority, const std::string& from, const std::string& topic, unsigned char* data, int length) : Message(priority, from, topic) {
 		base64encoded=base64_encode(data, length);
 	};
-	ImageMessage(int priority, const std::string& from, const std::string& topic, std::string base64encoded) : ... {}
+	ImageMessage(int priority, const std::string& from, const std::string& topic, std::string base64encoded) : Message(priority, from, topic),base64encoded(base64encoded){}
 	std::vector<unsigned char> getImage();
 	virtual std::string toString();
 };
