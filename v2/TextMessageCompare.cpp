@@ -1,10 +1,23 @@
-#include <iostream>                  //standard C++ library for input and output
+//==================================================================
+// Filename : TextMessageCompare.cpp
+// Authors : Dharanish NH, Protik Banerji
+// Version : 1.0
+// License : MIT
+// Description : TextMessageCompare class member function defintions
+//==================================================================
 
-#include "TextMessage.h"			//include standard user defined library
+#include <iostream> // Standard C++ library for input and output
 
-class TextMessageCompare {            //TextMessageCokmpare class initialisation
+#include "TextMessage.h" //include Library with the Textmessage members and functions
+
+// TextMessageCompare class initialisation
+class TextMessageCompare
+{ 
 public:
-	bool operator()(TextMessage* a, TextMessage* b) {                  //function checks the priority of the message
+	// Overload the () operator to return the result of comparing the priorities
+	// of TextMessage A and B
+	bool operator()(TextMessage *a, TextMessage *b)
+	{ 
 		return (a->getPriority() > b->getPriority());
 	}
 };
