@@ -20,7 +20,7 @@ private:			   // Private data members
 	std::string text;  // Text variable which is string type to store text information
 public:
 	TextMessage(int priority, std::string from, std::string topic, std::string text) : // Constructor intialisation
-																					   priority(priority), from(from), topic(topic), text(text)
+	priority(priority), from(from), topic(topic), text(text)
 	{
 		if (priority <= 0 || priority >= 16)
 			throw std::runtime_error("Error in priority"); // Checks priority if its not valid throws a runtime error message
