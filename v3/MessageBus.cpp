@@ -22,7 +22,7 @@ void MessageBus::registerNode(Node *node)
 }
 
 // Member function to for linking node and topic
-void MessageBus::registerNodeForTopic(Node *node, const std::string &topic)
+void MessageBus::registerNodeForTopic(Node *node, std::string topic)
 {
 	// Read all node elements into a vector structure
 	std::vector<Node *> elements = subscriptions[topic];
@@ -50,7 +50,7 @@ void MessageBus::printMessages()
 	}
 }
 
-// Member function to handle
+// Member function to handle messages
 void MessageBus::handleMessages()
 {
 	// Process priority queue till empty
@@ -67,4 +67,10 @@ void MessageBus::handleMessages()
 		}
 		queue.pop(); //removes the data from queue
 	}
+}
+
+// Run method implementation for MessageBus
+void MessageBus::run()
+{
+	std::this_thread::sleep_for(std::chrono::milliseconds(100));
 }
