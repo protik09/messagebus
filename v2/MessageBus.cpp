@@ -22,7 +22,7 @@ void MessageBus::registerNode(Node *node)
 }
 
 // Member function to for linking node and topic
-void MessageBus::registerNodeForTopic(Node *node, std::string topic)
+void MessageBus::registerNodeForTopic(Node *node, const std::string &topic)
 {
 	// Read all node elements into a vector structure
 	std::vector<Node *> elements = subscriptions[topic];
@@ -33,7 +33,7 @@ void MessageBus::registerNodeForTopic(Node *node, std::string topic)
 }
 
 // Member function to store messages in the priority queue
-void MessageBus::acceptMessage(TextMessage *message)
+void MessageBus::acceptMessage(Message *message)
 {
 	// Add message to the bottom of the priority queue
 	queue.push(message);
@@ -44,7 +44,7 @@ void MessageBus::printMessages()
 {
 	while (!queue.empty()) // Checks if queue is not empty
 	{
-		TextMessage tm = *(queue.top());		 // assigns the pointer data to a variable
+		Message tm = *(queue.top());		 // assigns the pointer data to a variable
 		std::cout << tm.toString() << std::endl; // converts and prints in string format
 		queue.pop();							 // removes the message after displaying
 	}
@@ -56,7 +56,7 @@ void MessageBus::handleMessages()
 	// Process priority queue till empty
 	while (queue.size() != 0)
 	{
-		TextMessage *message = queue.top(); // Message pointer holds the info of topmost data on queue
+		Message *message = queue.top(); // Message pointer holds the info of topmost data on queue
 
 		std::vector<Node *> elements = subscriptions[message->getTopic()]; //Read all node elements into a vector structure
 

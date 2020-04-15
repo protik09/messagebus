@@ -9,7 +9,7 @@
 #include <iostream> // standard C++ library for input and output
 
 #include "Node.h"		 // include standard user defined library
-#include "TextMessage.h" // include standard user defined library
+#include "Message.h" // include standard user defined library
 #include "MessageBus.h"	 // include standard user defined library
 
 // Get the name of the node
@@ -19,13 +19,13 @@ std::string Node::getName() const
 }
 
 // Add message to bus queue
-void Node::sendMessage(TextMessage *message)
+void Node::sendMessage(Message *message)
 {
 	bus->acceptMessage(message);
 }
 
 // Print the message when accepting it
-void Node::acceptMessage(TextMessage *message)
+void Node::acceptMessage(Message *message)
 {
 	std::cout << message->toString() << std::endl;
 }

@@ -3,37 +3,19 @@
 // Authors : Dharanish NH, Protik Banerji
 // Version : 1.0
 // License : MIT
-// Description : TextMessage class member function defintions
+// Description : Message class member function defintions
 //==============================================================
 
-#include "TextMessage.h" //include user defined TextMesssage header
-
-// GetPriority function definition
-int TextMessage::getPriority() const
-{
-	return priority;
-}
-
-// GetFrom function definition
-std::string TextMessage::getFrom() const
-{
-	return from;
-}
-
-// GetTopic function definition
-std::string TextMessage::getTopic() const
-{
-	return topic;
-}
+#include "TextMessage.h" //include user defined TextMessage header
 
 // GetText function definition
-std::string TextMessage::getText() const
+std::string TextMessage::getText()
 {
 	return text;
 }
 
 // toString function definition
-std::string TextMessage::toString() const
+std::string TextMessage::toString()
 {
-	return "MESSAGE " + std::to_string(priority) + " " + from + " " + topic + " T " + text; //concatenates info of priority,from,topic,text
+	return "MESSAGE " + std::to_string(getPriority()) + " " + getFrom() + " " + getTopic() + " T " + text; //concatenates info of priority,from,topic,text
 }
