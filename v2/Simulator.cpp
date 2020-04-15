@@ -2,8 +2,8 @@
 
 #include "Message.h"
 #include "TextMessage.h"
-#include "MeasurementMessage.h"
-#include "ImageMessage.h"
+//#include "MeasurementMessage.h"
+//#include "ImageMessage.h"
 #include "Node.h"
 #include "MessageBus.h"
 #include <string>
@@ -31,31 +31,31 @@ int main() {
 	bus->registerNodeForTopic(node1, "TopicG");
 	bus->registerNodeForTopic(node2, "TopicG");
 
-	std::vector<Message*> garbage;
+	std::vector<TextMessage*> garbage;
 
 	for (int i = 10; i >= 1; i--) {
 		TextMessage* message1 = new TextMessage(i, node1->getName(), "Topic1", "(" + std::to_string(i) + ")" + node1->getName() + "-->Topic1");
-		MeasurementMessage* message2 = new MeasurementMessage(i, node2->getName(), "Topic2", i);
+	//	MeasurementMessage* message2 = new MeasurementMessage(i, node2->getName(), "Topic2", i);
 		unsigned char* data1 = new unsigned char[16];
-		ImageMessage* message3 = new ImageMessage(i, node3->getName(), "Topic3", data1, 16);
+	//	ImageMessage* message3 = new ImageMessage(i, node3->getName(), "Topic3", data1, 16);
 		TextMessage* messageGen1 = new TextMessage(i, node1->getName(), "TopicG", "(" + std::to_string(i) + ")" + node1->getName() + "-->TopicG");
-		MeasurementMessage* messageGen2 = new MeasurementMessage(i, node2->getName(), "TopicG", i);
+	//	MeasurementMessage* messageGen2 = new MeasurementMessage(i, node2->getName(), "TopicG", i);
 		unsigned char* data3 = new unsigned char[256];
-		ImageMessage* messageGen3 = new ImageMessage(i, node3->getName(), "TopicG", data3, 256);
+	//	ImageMessage* messageGen3 = new ImageMessage(i, node3->getName(), "TopicG", data3, 256);
 
 		bus->acceptMessage(message1);
-		bus->acceptMessage(message2);
-		bus->acceptMessage(message3);
+	//	bus->acceptMessage(message2);
+	//	bus->acceptMessage(message3);
 		bus->acceptMessage(messageGen1);
-		bus->acceptMessage(messageGen2);
-		bus->acceptMessage(messageGen3);
+	//	bus->acceptMessage(messageGen2);
+	//	bus->acceptMessage(messageGen3);
 
 		garbage.push_back(message1);
-		garbage.push_back(message2);
-		garbage.push_back(message3);
+	//	garbage.push_back(message2);
+	//	garbage.push_back(message3);
 		garbage.push_back(messageGen1);
-		garbage.push_back(messageGen2);
-		garbage.push_back(messageGen3);
+	//	garbage.push_back(messageGen2);
+	//	garbage.push_back(messageGen3);
 
 	}
 	bus->handleMessages();
