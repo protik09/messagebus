@@ -1,3 +1,12 @@
+//==============================================================
+// Filename : Simulator.cpp
+// Authors : Dharanish NH, Protik Banerji
+// Version : 1.0
+// License : MIT
+// Description : Simulate adding nodes, registering nodes and
+// 				 topics, register node to topics and send messages
+// 				 on the messagebus.
+//==============================================================
 #include <iostream>
 
 #include "Message.h"
@@ -5,6 +14,7 @@
 #include "MeasurementMessage.h"
 #include "ImageMessage.h"
 #include "Node.h"
+
 #include "MessageBus.h"
 #include <string>
 #include <vector>
@@ -61,5 +71,9 @@ int main() {
 	bus->handleMessages();
 
 	// clean up memory
-	// ...
+	while (!garbage.empty())
+	{
+		delete garbage.back();
+		garbage.pop_back();
+	}
 }
