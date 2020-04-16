@@ -20,6 +20,7 @@
 #include <vector>
 
 int main() {
+	std::vector<Message*> garbage;
 	MessageBus* bus=new MessageBus();
 
 	Node* node1 = new Node("Node1", bus);
@@ -41,7 +42,6 @@ int main() {
 	bus->registerNodeForTopic(node1, "TopicG");
 	bus->registerNodeForTopic(node2, "TopicG");
 
-	std::vector<Message*> garbage;
 
 	for (int i = 10; i >= 1; i--) {
 		TextMessage* message1 = new TextMessage(i, node1->getName(), "Topic1", "(" + std::to_string(i) + ")" + node1->getName() + "-->Topic1");
@@ -76,4 +76,8 @@ int main() {
 		delete garbage.back();
 		garbage.pop_back();
 	}
+	delete node1;
+	delete node2;
+	delete node3;
+	delete bus;
 }
