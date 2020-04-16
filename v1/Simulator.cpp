@@ -65,5 +65,8 @@ int main()
 		delete garbage.back();
 		garbage.pop_back();
 	}
-	
+	delete node1;
+	delete node2;
+	delete node3;
+	delete bus;
 }
