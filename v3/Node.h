@@ -1,8 +1,14 @@
+//==============================================================
+// Filename : Node.h
+// Authors : Dharanish NH, Protik Banerji
+// Version : 1.0
+// License : MIT
+// Description : Node class member function prototypes
+//==============================================================
 #pragma once
 
-#include <string>
-#include "TextMessage.h"
-//#include "MessageBus.h"
+#include "Message.h"
+
 class MessageBus;
 
 class Node {

@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "Node.h"
+#include "Nodes.h"
 #include "Message.h"
 #include "MessageCompare.cpp"
 #include <thread>
