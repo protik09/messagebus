@@ -76,7 +76,7 @@ int main() {
 		delete garbage.back();
 		garbage.pop_back();
 	}
-	garbage.shrink_to_fit();
+	// garbage.shrink_to_fit(); // This is not necessary as pop_back frees up memory assigned to garbage
 	delete node1;
 	delete node2;
 	delete node3;
