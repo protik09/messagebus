@@ -72,13 +72,11 @@ void MessageBus::handleMessages()
 // Run implementation 
 void MessageBus::run()
 {
-	std::vector<Message *> garbage;
-	bus->acceptMessage(message1);
-	bus->acceptMessage(message2);
-	bus->acceptMessage(message3);
-	bus->acceptMessage(messageGen1);
-	bus->acceptMessage(messageGen2);
-	bus->acceptMessage(messageGen3);
+	while (1)
+	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+		handleMessages();
+	}
 }
 
 // Start method implementation for MessageBus
@@ -86,5 +84,5 @@ void MessageBus::start()
 {
 	// Run in thread
 	std::thread bus_thread([this]() { this->run(); });
-	bus_thread.join();
+	bus_thread.detach();
 }

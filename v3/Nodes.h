@@ -14,8 +14,7 @@
 #include "ImageMessage.h"
 #include "MeasurementMessage.h"
 
-// class Nodes : public Node
-class Nodes:
+class Nodes
 {
 private:
 	void run();
