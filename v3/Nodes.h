@@ -1,12 +1,26 @@
-#pragma once
-#include "MessageBus.h"
+//==============================================================
+// Filename : Nodes.h
+// Authors : Dharanish NH, Protik Banerji
+// Version : 1.0
+// License : MIT
+// Description : Nodes class member function prototypes
+//==============================================================
 
-class Nodes {
+#pragma once
+
+#include "Node.h"
+#include "MessageBus.h"
+#include "TextMessage.h"
+#include "ImageMessage.h"
+#include "MeasurementMessage.h"
+
+// class Nodes : public Node
+class Nodes
+{
 private:
-	MessageBus* bus;
 	void run();
 public:
+	MessageBus* bus;
 	Nodes(MessageBus* bus) : bus(bus) {}
 	void start();
 };
-

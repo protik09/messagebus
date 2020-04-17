@@ -5,24 +5,23 @@
 #include <unordered_map>
 #include <queue>
 #include <iostream>
+#include <string>
 
 #include "Node.h"
-#include "Nodes.h"
 #include "Message.h"
 #include "MessageCompare.cpp"
-#include <thread>
-#include <mutex>
-#include <chrono>
 
 class MessageBus {
 private:
 	std::set<Node*> nodes;
 	std::unordered_map<std::string, std::vector<Node*>> subscriptions;
 	std::priority_queue<Message*, std::vector<Message*>, MessageCompare> queue;
+	std::string dblocation;
 	void run();
-		
+
 public:
-	MessageBus() {}
+	MessageBus(const std::string dblocation): dblocation(dblocation) {}
+	void init();
 	void registerTopic(const std::string&);
 	void registerNode(Node*);
 	void registerNodeForTopic(Node*, std::string);
