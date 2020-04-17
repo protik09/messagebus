@@ -8,7 +8,7 @@
 
 #include <map> // Include map library to store data in a mapped data type (subscriptions)
 
-#include "MessageBus.h" // Include user defined function
+#include "MessageBus.h" // Include user defined library
 
 // Messagebus member to register topic using string key
 void MessageBus::registerTopic(const std::string &topic)

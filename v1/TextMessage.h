@@ -3,7 +3,7 @@
 // Authors : Dharanish NH, Protik Banerji
 // Version : 1.0
 // License : MIT
-// Description : TextMessage class member function defintions
+// Description : TextMessage class member function prototypes
 //==============================================================
 
 #pragma once // Preprocessor definition for header guard

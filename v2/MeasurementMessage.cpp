@@ -3,7 +3,7 @@
 // Authors : Dharanish NH, Protik Banerji
 // Version : 1.0
 // License : MIT
-// Description : Message class member function defintions
+// Description : MeasurementMessage class member function defintions
 //==============================================================
 
 #include "MeasurementMessage.h" //include user defined MeasurementMessage header
