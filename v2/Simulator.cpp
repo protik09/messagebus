@@ -76,6 +76,7 @@ int main() {
 		delete garbage.back();
 		garbage.pop_back();
 	}
+	garbage.shrink_to_fit();
 	delete node1;
 	delete node2;
 	delete node3;
