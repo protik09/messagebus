@@ -12,7 +12,7 @@
 #include <thread>
 
 int main() {
-	std::string db = "<<some path to node_clean.db>> use / or \\ in your path";
+	std::string db = "C:\\Users\nhdha\Desktop\MEssagebus\cpp\messagebus\v4";
 
 	NodeConfigWriter* n = new NodeConfigWriter(db);
 	n->clear();
