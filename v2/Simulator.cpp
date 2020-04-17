@@ -35,13 +35,13 @@ int main() {
 
 	for (int i = 10; i >= 1; i--) {
 		TextMessage* message1 = new TextMessage(i, node1->getName(), "Topic1", "(" + std::to_string(i) + ")" + node1->getName() + "-->Topic1");
-	//	MeasurementMessage* message2 = new MeasurementMessage(i, node2->getName(), "Topic2", i);
+		MeasurementMessage* message2 = new MeasurementMessage(i, node2->getName(), "Topic2", i);
 		unsigned char* data1 = new unsigned char[16];
-	//	ImageMessage* message3 = new ImageMessage(i, node3->getName(), "Topic3", data1, 16);
+		ImageMessage* message3 = new ImageMessage(i, node3->getName(), "Topic3", data1, 16);
 		TextMessage* messageGen1 = new TextMessage(i, node1->getName(), "TopicG", "(" + std::to_string(i) + ")" + node1->getName() + "-->TopicG");
-	//	MeasurementMessage* messageGen2 = new MeasurementMessage(i, node2->getName(), "TopicG", i);
+		MeasurementMessage* messageGen2 = new MeasurementMessage(i, node2->getName(), "TopicG", i);
 		unsigned char* data3 = new unsigned char[256];
-	//	ImageMessage* messageGen3 = new ImageMessage(i, node3->getName(), "TopicG", data3, 256);
+		ImageMessage* messageGen3 = new ImageMessage(i, node3->getName(), "TopicG", data3, 256);
 
 		bus->acceptMessage(message1);
 	//	bus->acceptMessage(message2);
